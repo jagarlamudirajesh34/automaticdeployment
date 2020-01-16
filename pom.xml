@@ -5,7 +5,7 @@
 	<groupId>com.dev3l.hello_world</groupId>
 	<artifactId>mvn-hello-world</artifactId>
 	<packaging>war</packaging>
-	<version>1.2-SNAPSHOT</version>
+	<version>1.3-SNAPSHOT</version>
 	<name>mvn-hello-world Maven Webapp</name>
 	<url>http://maven.apache.org</url>
 	<dependencies>
