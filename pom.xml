@@ -5,7 +5,7 @@
 	<groupId>com.srish</groupId>
 	<artifactId>mvn-hello-world</artifactId>
 	<packaging>war</packaging>
-	<version>1.2</version>
+	<version>1.3</version>
 	<name>mvn-hello-world Maven Webapp</name>
 	<url>http://maven.apache.org</url>
 	<dependencies>
