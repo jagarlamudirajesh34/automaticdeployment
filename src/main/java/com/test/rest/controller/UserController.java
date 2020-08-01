@@ -28,7 +28,7 @@ public class UserController {
 	public ServiceStatus getAllActiveCourses() {
 		ServiceStatus serviceStatus = new ServiceStatus();
 		try {
-			List<User> allActiveUsers = userService.getAllUsers();
+			List<User> allActiveUsers = userService.getAllActiveUsers();
 			if(allActiveUsers != null && !allActiveUsers.isEmpty()){
 				serviceStatus.setStatus("success");
 				serviceStatus.setMessage("Retrived All Active Users Successfully");

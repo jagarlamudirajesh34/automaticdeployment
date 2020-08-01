@@ -20,10 +20,17 @@ public class UserDaoImpl extends AbstractDao implements UserDao {
 	}
 
 	@Override
-	public List<User> getAllUsers() {
+	public List<User> getAllActiveUsers() {
 		Session session = getSession();
 		Criteria criteria = session.createCriteria(User.class);
-		return (List<User>) criteria.list();
+		return (List<User>) criteria.add(Restrictions.eq("deletedYn", false)).list();
+	}
+	
+	@Override
+	public List<User> getAllInActiveUsers() {
+		Session session = getSession();
+		Criteria criteria = session.createCriteria(User.class);
+		return (List<User>) criteria.add(Restrictions.eq("deletedYn", true)).list();
 	}
 
 }

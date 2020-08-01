@@ -8,6 +8,8 @@ public interface UserService {
 
 	User getUser(String mobile);
 	
-	List<User> getAllUsers();
+	List<User> getAllActiveUsers();
+	
+	List<User> getAllInActiveUsers();
 
 }

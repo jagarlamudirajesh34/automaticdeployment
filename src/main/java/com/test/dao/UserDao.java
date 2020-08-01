@@ -8,6 +8,8 @@ public interface UserDao extends Dao {
 
 	User getUser(String mobile);
 	
-	List<User> getAllUsers();
+	List<User> getAllActiveUsers();
+	
+	List<User> getAllInActiveUsers();
 
 }
