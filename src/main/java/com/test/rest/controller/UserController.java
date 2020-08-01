@@ -47,5 +47,31 @@ public class UserController {
 		}
 		return serviceStatus;
 	}
+	
+	// for getting all Active courses details
+		@RequestMapping(value = "/getAllInActiveUsers", method = RequestMethod.GET, produces = { "application/json" })
+		@ResponseBody
+		public ServiceStatus getAllInActiveCourses() {
+			ServiceStatus serviceStatus = new ServiceStatus();
+			try {
+				List<User> allActiveUsers = userService.getAllInActiveUsers();
+				if(allActiveUsers != null && !allActiveUsers.isEmpty()){
+					serviceStatus.setStatus("success");
+					serviceStatus.setMessage("Retrived All Active Users Successfully");
+					serviceStatus.setResult(allActiveUsers);
+				}else{
+					serviceStatus.setStatus("failure");
+					serviceStatus.setMessage("No Active users found");
+				}
+				serviceStatus.setStatus("success");
+				serviceStatus.setMessage("Retrived All Active Users Successfully");
+			} catch (Exception e) {
+				e.printStackTrace();
+				serviceStatus.setStatus("failure");
+				serviceStatus.setMessage("Exception occured");
+				serviceStatus.setResult(e.getLocalizedMessage());
+			}
+			return serviceStatus;
+		}
 
 }
