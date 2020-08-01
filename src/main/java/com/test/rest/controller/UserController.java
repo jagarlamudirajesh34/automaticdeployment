@@ -43,7 +43,7 @@ public class UserController {
 			e.printStackTrace();
 			serviceStatus.setStatus("failure");
 			serviceStatus.setMessage("Exception occured");
-			serviceStatus.setResult(e.getStackTrace());
+			serviceStatus.setResult(e.getLocalizedMessage());
 		}
 		return serviceStatus;
 	}
