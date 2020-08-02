@@ -81,7 +81,7 @@ public class UserController {
 				public ServiceStatus getExternalUser(@PathVariable("userId") Long userId) {
 					ServiceStatus serviceStatus = new ServiceStatus();
 					try {
-						User allActiveUsers = userService.getExternalUser(userId);
+						String allActiveUsers = userService.getExternalUser(userId);
 						if(allActiveUsers != null){
 							serviceStatus.setStatus("success");
 							serviceStatus.setMessage("Retrived All Active Users Successfully");
@@ -107,7 +107,7 @@ public class UserController {
 				public ServiceStatus user(@PathVariable("userId") Long userId) {
 					ServiceStatus serviceStatus = new ServiceStatus();
 					try {
-						User allActiveUsers = userService.getUserById(userId);
+						String allActiveUsers = userService.getUserById(userId);
 						if(allActiveUsers != null){
 							serviceStatus.setStatus("success");
 							serviceStatus.setMessage("Retrived All Active Users Successfully");

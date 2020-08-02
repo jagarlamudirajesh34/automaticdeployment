@@ -1,6 +1,9 @@
 package com.test.service;
 
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLConnection;
 import java.util.List;
@@ -35,13 +38,22 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
-	public User getExternalUser(Long id) {
+	public String getExternalUser(Long id) {
 		try {
-		    URL myURL = new URL("http://13.235.100.66:8083/mvn-hello-world/user/user/"+id);
-		    URLConnection myURLConnection = myURL.openConnection();
-		    myURLConnection.connect();
-		    myURLConnection.getContent();
-		    return (User) myURLConnection.getContent();
+			URL url = new URL("http://13.235.100.66:8081/mvn-hello-world/user/user/"+id);
+			HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+			conn.setRequestMethod("GET");
+			conn.setRequestProperty("Accept", "application/json");
+
+			BufferedReader br = new BufferedReader(new InputStreamReader(
+				(conn.getInputStream())));
+
+			String output;
+			System.out.println("Output from Server .... \n");
+			while ((output = br.readLine()) != null) {
+				System.out.println(output);
+			}
+			return output;
 		} 
 		catch (IOException e) {   
 		    // openConnection() failed
@@ -52,8 +64,9 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
-	public User getUserById(Long id) {
-		return userDao.getUserById(id);
+	public String getUserById(Long id) {
+		User user = userDao.getUserById(id);
+		return user.getFirstName();
 	}
 
 }

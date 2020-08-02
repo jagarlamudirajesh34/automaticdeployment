@@ -12,8 +12,8 @@ public interface UserService {
 	
 	List<User> getAllInActiveUsers();
 	
-	User getExternalUser(Long id);
+	String getExternalUser(Long id);
 	
-	User getUserById(Long id);
+	String getUserById(Long id);
 
 }
