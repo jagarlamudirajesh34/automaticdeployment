@@ -37,7 +37,7 @@ public class UserServiceImpl implements UserService {
 	@Override
 	public User getExternalUser(Long id) {
 		try {
-		    URL myURL = new URL("http://13.235.100.66:8083/mvn-hello-world/user/"+id);
+		    URL myURL = new URL("http://13.235.100.66:8083/mvn-hello-world/user/user/"+id);
 		    URLConnection myURLConnection = myURL.openConnection();
 		    myURLConnection.connect();
 		    myURLConnection.getContent();
