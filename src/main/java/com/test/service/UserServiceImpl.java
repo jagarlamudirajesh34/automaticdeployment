@@ -40,7 +40,7 @@ public class UserServiceImpl implements UserService {
 	@Override
 	public String getExternalUser(Long id) {
 		try {
-			URL url = new URL("http://13.235.100.66:8081/mvn-hello-world/user/user/"+id);
+			URL url = new URL("http://13.235.100.66:8083/mvn-hello-world/user/user/"+id);
 			HttpURLConnection conn = (HttpURLConnection) url.openConnection();
 			conn.setRequestMethod("GET");
 			conn.setRequestProperty("Accept", "application/json");
@@ -48,16 +48,17 @@ public class UserServiceImpl implements UserService {
 			BufferedReader br = new BufferedReader(new InputStreamReader(
 				(conn.getInputStream())));
 
-			String output;
-			System.out.println("Output from Server .... \n");
-			while ((output = br.readLine()) != null) {
+			//String output;
+			//System.out.println("Output from Server .... \n");
+			/*while ((output = br.readLine()) != null) {
 				System.out.println(output);
-			}
-			return output;
+			}*/
+			return br.readLine();
 		} 
 		catch (IOException e) {   
 		    // openConnection() failed
 		    // ...
+			e.printStackTrace();
 			return null;
 		}
 		

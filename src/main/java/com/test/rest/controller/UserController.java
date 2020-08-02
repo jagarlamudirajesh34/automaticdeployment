@@ -82,9 +82,10 @@ public class UserController {
 					ServiceStatus serviceStatus = new ServiceStatus();
 					try {
 						String allActiveUsers = userService.getExternalUser(userId);
+						//System.err.println(allActiveUsers);
 						if(allActiveUsers != null){
-							serviceStatus.setStatus("success");
-							serviceStatus.setMessage("Retrived All Active Users Successfully");
+							//serviceStatus.setStatus("success");
+						//	serviceStatus.setMessage("Retrived All Active Users Successfully");
 							serviceStatus.setResult(allActiveUsers);
 						}else{
 							serviceStatus.setStatus("failure");
