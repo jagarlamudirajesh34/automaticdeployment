@@ -11,5 +11,9 @@ public interface UserService {
 	List<User> getAllActiveUsers();
 	
 	List<User> getAllInActiveUsers();
+	
+	User getExternalUser(Long id);
+	
+	User getUserById(Long id);
 
 }

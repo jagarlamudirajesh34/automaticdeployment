@@ -33,4 +33,11 @@ public class UserDaoImpl extends AbstractDao implements UserDao {
 		return (List<User>) criteria.add(Restrictions.eq("deletedYn", true)).list();
 	}
 
+	@Override
+	public User getUserById(Long id) {
+		Session session = getSession();
+		Criteria criteria = session.createCriteria(User.class);
+		return (User) criteria.add(Restrictions.eq("id", id)).uniqueResult();
+	}
+
 }

@@ -13,5 +13,13 @@
       <h1 class="text-center">My job is done with jenkins</h1>
       <h2 class="text-center">CICD jenkins Completed.... Maven completed in Normal & distributed Process</h2>
   </div>
+  <div>
+  	<button name="button" value="OK" type="button" onclick="hello()">Click Here</button>  
+  </div>
 </body>
+<script>  
+function hello(){  
+alert("hello javatpoint user");  
+}  
+</script> 
 </html>

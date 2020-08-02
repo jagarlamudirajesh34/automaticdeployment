@@ -11,5 +11,8 @@ public interface UserDao extends Dao {
 	List<User> getAllActiveUsers();
 	
 	List<User> getAllInActiveUsers();
+	
+	User getUserById(Long id);
+
 
 }
