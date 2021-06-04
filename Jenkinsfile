@@ -1,7 +1,7 @@
 pipeline {
     agent any
     tools {
-        mvn 'maven3'
+        maven 'maven3'
         git 'Default'
     }
    
